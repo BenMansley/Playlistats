@@ -1,0 +1,60 @@
+@mixin padSide() {
+  width: 90%;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+div[data-reactroot] {
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  color: #660843;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 5vw 0;
+}
+
+header {
+  background-color: #42F4A1;
+  padding: 5vw 10vw;
+
+  .title {
+    margin: 0;
+    font-size: 7vmax;
+  }
+}
+
+@import 'login/login.scss';
+@import 'playlist-picker/playlist-picker.scss';
+@import 'playlist-stats/playlist-stats.scss';
+
+footer {
+  background: #333333;
+  color: #FFFFFF;
+
+  .footer-content {
+    @include padSide();
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+
+    .footer-heart {
+      color: #DD0000;
+    }
+
+    .footer-link {
+      color: #B5D5FF;
+    }
+  }
+}

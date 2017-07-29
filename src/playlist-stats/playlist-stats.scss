@@ -1,0 +1,176 @@
+.stats {
+  display: flex;
+  flex: 1;
+  background: #25C5B0;
+  flex-direction: column;
+  font-size: 1.2em;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: stretch;
+
+  &.loading {
+    justify-content: center;
+    align-items: center;
+
+    .stats-loading-icon {
+      display: block;
+      animation: 1.5s linear 0s infinite spin;
+    }
+
+    > section {
+      display: none;
+    }
+  }
+
+  .stats-loading-icon {
+    display: none;
+  }
+
+  .stats-emphasis {
+    font-size: 4em;
+    font-weight: 700;
+  }
+
+  .stats-small {
+    font-size: 2.5em;
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .stats-emphasis, .stats-small {
+      display: block;
+      margin-bottom: 0.6em;
+    }
+
+    .stats-divider {
+      display: none;
+    }
+  }
+
+  .stats-durations {
+    background: #25C5B0;
+
+    > p {
+      margin: 1em auto;
+      max-width: 1000px;
+      width: 90%;
+    }
+  }
+
+  .stats-analysis {
+    background: #FFB5EA;
+
+    > p {
+      @include padSide();
+      max-width: 1000px;
+    }
+    
+    .stats-analysis-wrap {
+      @include padSide();      
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .stats-features {
+        flex: 1 1 500px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .stats-feature {
+          margin-top: 1em;
+          flex: 0 0 200px;
+          
+          .feature-icon {
+            display: block;
+            width: 160px;
+            margin: 0 auto 0.5em;
+          }
+          
+          span {
+            display: block;
+            text-align: center;
+            font-size: 1.2em;
+          }
+        }
+      }
+
+      .stats-key {
+        flex: 1 1 500px;
+
+        .stats-big-key {
+          text-align: center;
+          margin: 0;
+          font-size: 8em;
+        }
+
+        .stats-key-desc {
+          margin: 0 auto;
+          max-width: 300px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+
+  .stats-years {
+    background: #F4F270;
+
+    > p {
+      @include padSide();
+      max-width: 800px;
+      text-align: center;
+    }
+
+    @import 'year-graph/year-graph.scss';
+  }
+
+  .stats-popularity {
+    background: #B5D5FF;
+
+    > p {
+      @include padSide();
+      max-width: 800px;
+
+      &.stats-popularity-description {
+        font-size: 1.7em;
+        margin: 1.25em auto 2em;
+      }
+    }
+  }
+
+  .stats-image {
+    background: #333333;
+
+    img {
+      @include padSide();
+      display: block;
+      max-width: 640px;
+      border: 4px solid #FFFFFF;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  30% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  80% {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,32 @@
+.login {
+  background: #333333;
+  flex: 1 1 auto;
+
+  .login-button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.6em 2em;
+    background: #2EBD59;
+    color: #FFFFFF;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 2em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background: #259948;
+    }
+  }
+
+  .error {    
+    display: block;
+    color: #FF66EB;
+    max-width: 90%;
+    margin: 1em auto;
+    text-align: center;
+    font-weight: 400;
+  }
+}
